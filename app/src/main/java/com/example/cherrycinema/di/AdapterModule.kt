@@ -1,6 +1,6 @@
 package com.example.cherrycinema.di
 
-import com.example.cherrycinema.data.adapter.MoviesAdapter
+import com.example.cherrycinema.ui.movieList.MovieListAdapter
 import dagger.Module
 import dagger.Provides
 
@@ -8,6 +8,6 @@ import dagger.Provides
 class AdapterModule {
 
     @Provides
-    fun provideMovieAdapter() = MoviesAdapter()
+    fun provideMovieAdapter() = MovieListAdapter()
 
 }

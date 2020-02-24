@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
-import com.example.cherrycinema.data.adapter.MoviesAdapter
 import com.example.cherrycinema.data.remote.network.Status
 import com.example.cherrycinema.databinding.FragmentMovieListBinding
 import dagger.android.support.AndroidSupportInjection
@@ -20,7 +19,7 @@ class MovieListFragment : Fragment() {
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     @Inject
-    lateinit var adapter: MoviesAdapter
+    lateinit var adapter: MovieListAdapter
 
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
