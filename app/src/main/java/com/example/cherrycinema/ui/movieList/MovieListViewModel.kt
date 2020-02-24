@@ -5,11 +5,10 @@ import com.example.cherrycinema.data.repository.MovieRepository
 import javax.inject.Inject
 
 
-class MovieListViewModel @Inject constructor(private val repository: MovieRepository) :
+class MovieListViewModel @Inject constructor(repository: MovieRepository) :
     ViewModel() {
 
-    val movies by lazy { repository.getUpcoming() }
-
     val status = repository.getStatus()
+    val movies = repository.getMovies()
 
 }

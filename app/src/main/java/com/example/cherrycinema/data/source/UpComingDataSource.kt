@@ -2,6 +2,7 @@ package com.example.cherrycinema.data.source
 
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource
+import androidx.paging.PagedList
 import com.example.cherrycinema.data.remote.api.MovieService
 import com.example.cherrycinema.data.remote.model.Movie
 import com.example.cherrycinema.data.remote.network.Resource
@@ -11,13 +12,14 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class UpComingDataSource @Inject constructor(
     private val movieService: MovieService
 ) : PageKeyedDataSource<Int, Movie>() {
 
     var status: MutableLiveData<Status> = MutableLiveData()
-    private val responseHandler: ResponseHandler = ResponseHandler()
 
     override fun loadInitial(
         params: LoadInitialParams<Int>,
@@ -56,6 +58,7 @@ class UpComingDataSource @Inject constructor(
         callback: (List<Movie>) -> Unit
     ) {
         CoroutineScope(Dispatchers.IO).launch {
+            val responseHandler = ResponseHandler()
             val response: Resource<List<Movie>> = try {
                 val result = movieService.getUpcoming(page)
                 responseHandler.handleSuccess(result.results)

@@ -21,9 +21,8 @@ class MovieRepository @Inject constructor(
         UpComingDataSource::status
     )
 
-    fun getUpcoming(): LiveData<PagedList<Movie>> {
-        val result = dataSourceFactory
-        return LivePagedListBuilder(result, pagedListConfig()).build()
+    fun getMovies(): LiveData<PagedList<Movie>> {
+        return LivePagedListBuilder(dataSourceFactory, pagedListConfig()).build()
     }
 
     private fun pagedListConfig() = PagedList.Config.Builder().build()
