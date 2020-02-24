@@ -8,6 +8,7 @@ import dagger.android.AndroidInjectionModule
     modules = [
         AndroidInjectionModule::class,
         ActivitiesModule::class,
+        DataSourceModule::class,
         NetworkModule::class
     ]
 )
