@@ -17,7 +17,7 @@ internal abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(MovieListViewModel::class)
+    @ViewModelKey(value = MovieListViewModel::class)
     protected abstract fun movieListViewModel(moviesListViewModel: MovieListViewModel): ViewModel
 
 }

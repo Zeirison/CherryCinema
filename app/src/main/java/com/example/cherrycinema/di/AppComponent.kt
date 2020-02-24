@@ -12,7 +12,9 @@ import dagger.android.AndroidInjectionModule
         DataSourceModule::class,
         FragmentsModule::class,
         ViewModelModule::class,
-        NetworkModule::class
+        AdapterModule::class,
+        NetworkModule::class,
+        AppModule::class
     ]
 )
 interface AppComponent {
