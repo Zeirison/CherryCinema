@@ -13,7 +13,7 @@ data class Movie (
     val posterPath: String,
     @JsonProperty(value = "backdrop_path")
     val backdropPath: String,
-    val popularity: String,
+    val popularity: Float,
     @JsonProperty(value = "vote_count")
     val voteCount: Int,
     @JsonProperty(value = "original_language")

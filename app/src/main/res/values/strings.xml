@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Cherry Cinema</string>
+    <string name="movie_release_date">Release: %1$s</string>
+    <string name="movie_popularity">Popularity: %1$s</string>
 </resources>
