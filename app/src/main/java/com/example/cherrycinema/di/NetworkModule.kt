@@ -1,6 +1,7 @@
-package com.example.cherrycinema.data.remote.network
+package com.example.cherrycinema.di
 
 import com.example.cherrycinema.data.remote.api.MovieService
+import com.example.cherrycinema.data.remote.network.AuthInterceptor
 import com.example.cherrycinema.utils.API_KEY
 import com.example.cherrycinema.utils.API_URL
 import com.fasterxml.jackson.databind.ObjectMapper
@@ -47,7 +48,8 @@ class NetworkModule {
     }
 
     @Provides
-    fun provideAuthInterceptor(): AuthInterceptor = AuthInterceptor(API_KEY)
+    fun provideAuthInterceptor(): AuthInterceptor =
+        AuthInterceptor(API_KEY)
 
     @Provides
     fun provideLoggingInterceptor(): HttpLoggingInterceptor {
