@@ -25,4 +25,6 @@ data class Movie (
     val releaseDate: String,
     val video: Boolean,
     val adult: Boolean
-)
+) {
+    fun getFormatedPopularity() = popularity.toInt()
+}
