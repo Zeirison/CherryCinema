@@ -10,6 +10,8 @@ import dagger.android.AndroidInjectionModule
         ActivitiesModule::class,
         RepositoriesModule::class,
         DataSourceModule::class,
+        FragmentsModule::class,
+        ViewModelModule::class,
         NetworkModule::class
     ]
 )
